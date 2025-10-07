@@ -3,7 +3,7 @@ name: Auto Video Upload
 on:
 schedule:
 - cron: "30 15 * * *"  # 9:00 PM IST
-workflow_dispatch:       # allows manual trigger too
+workflow_dispatch: # allows manual trigger too
 
 jobs:
 build:
@@ -16,7 +16,7 @@ steps:
   - name: Set up Python
     uses: actions/setup-python@v5
     with:
-      python-version: '3.10'
+      python-version: "3.10"
 
   - name: Install dependencies
     run: |
