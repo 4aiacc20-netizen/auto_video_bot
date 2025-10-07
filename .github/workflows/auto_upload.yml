@@ -3,7 +3,7 @@ name: Auto Video Upload
 on:
 schedule:
 - cron: "30 15 * * *"  # 9:00 PM IST
-workflow_dispatch:      # allows manual trigger too
+workflow_dispatch:       # allows manual trigger too
 
 jobs:
 build:
