@@ -22,8 +22,12 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Install ImageMagick
-        run: sudo apt-get update && sudo apt-get install -y imagemagick
+      - name: Install ImageMagick and FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick ffmpeg
+          # Patch security policy to allow text rendering
+          sudo sed -i 's|<policy domain="path" rights="none" pattern="@\*"/>|<!-- disabled by workflow -->|' /etc/ImageMagick-6/policy.xml
 
       - name: Run generator
         env:
